@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "394215209531",
+    "firebase_url": "https://namjaitest.firebaseio.com",
+    "project_id": "namjaitest",
+    "storage_bucket": "namjaitest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:394215209531:android:2c2c816658033446",
+        "android_client_info": {
+          "package_name": "com.example.namjai.namjaiapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "394215209531-5se3tf17k7b81nja0rgf4kg3bbes3nv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCziOUDZu5F0-KDlhiYPy73lr1Eu1oUuRs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

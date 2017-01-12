@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.namjai.namjaiapp">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!--알리미
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    -->
+
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".splashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!-- Start fcm_receiver-->
+        <service android:name=".MyFcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".MyInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <!-- end fcm_receiver-->
+
+        <service
+            android:name=".ServiceTest.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".FlashTest.FlashActivity" />
+        <activity android:name=".FlashTest.Flash2Activity" />
+        <activity
+            android:name=".permission.PermissionActivity"
+            android:label="@string/title_activity_permission"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".GraphTest.GraphActivity" />
+        <activity android:name=".TimeSettingTest.TimeSettingCheckActivity" />
+        <activity android:name=".ServiceTest.ServiceTestActivity"></activity>
+    </application>
+
+</manifest>
