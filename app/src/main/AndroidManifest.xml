@@ -33,12 +33,12 @@
 
 
         <!-- Start fcm_receiver-->
-        <service android:name=".MyFcmListenerService">
+        <service android:name=".firebase.MyFcmListenerService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <service android:name=".MyInstanceIDListenerService">
+        <service android:name=".firebase.MyInstanceIDListenerService">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
@@ -47,6 +47,9 @@
 
         <!-- end fcm_receiver-->
 
+        <!---->
+
+        <!---->
         <service
             android:name=".ServiceTest.MyService"
             android:enabled="true"

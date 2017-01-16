@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.namjai.namjaiapp.FlashTest.FlashActivity;
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button button_dialog;
 
+    Button btn_etc;
 
 
 
@@ -53,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
         btn_timesetting = (Button) findViewById(R.id.btn_timesetting);
         btn_timesetting.setOnClickListener(timesettingClickLister);
 
+        btn_etc = (Button) findViewById(R.id.btn_etc);
+        btn_etc.setOnClickListener(subsribeClickLister);
 
-        //String token = FirebaseInstanceId.getInstance().getToken();
+        System.out.println("token!! ##token :dasdasd");
+        String token = FirebaseInstanceId.getInstance().getToken();
         // 이 token을 서버에 전달 한다.
+        System.out.println("token!! ##token : "+ token);
 
         //알람
         FirebaseMessaging.getInstance().subscribeToTopic("notice");
@@ -107,6 +113,19 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             Intent intent = new Intent(MainActivity.this, TimeSettingCheckActivity.class);
             startActivity(intent);
+        }
+    };
+    Button.OnClickListener subsribeClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            // [START subscribe_topics]
+            FirebaseMessaging.getInstance().subscribeToTopic("news");
+            // [END subscribe_topics]
+
+            // Log and toast
+            String msg = "News";
+            System.out.println("msg : " + msg);
+            Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
         }
     };
 

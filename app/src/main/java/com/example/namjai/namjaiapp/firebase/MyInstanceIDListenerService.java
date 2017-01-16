@@ -17,5 +17,15 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
         // Get updated InstanceID token.
         String token = FirebaseInstanceId.getInstance().getToken();
         System.out.println("##token : "+token);
+
+        sendRegistrationToServer(token);
+    }
+
+    private void sendRegistrationToServer(String token) {
+        // TODO: Implement this method to send token to your app server.
+        System.out.println("##server go token : "+token);
+
+
+
     }
 }

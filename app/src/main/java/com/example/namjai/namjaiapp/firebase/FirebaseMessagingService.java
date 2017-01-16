@@ -32,14 +32,19 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     public void onMessageReceived(RemoteMessage remoteMessage) {
         super.onMessageReceived(remoteMessage);
         Log.d(TAG, "From: " + remoteMessage.getFrom());
+        System.out.println("##From: " + remoteMessage.getFrom());
 
         if(remoteMessage.getData().size()>0){
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
+            System.out.println("##Message data payload: " + remoteMessage.getData());
         }
 
         if(remoteMessage.getNotification() != null){
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
             Log.d(TAG, "Message Notification Title: " + remoteMessage.getNotification().getTitle());
+            System.out.println("##Message Notification Body: " + remoteMessage.getNotification().getBody());
+            System.out.println("##Message Notification Title: " + remoteMessage.getNotification().getTitle());
+
             sendNotification(remoteMessage);
         }
 
@@ -47,6 +52,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     }
 
     private void sendNotification(RemoteMessage message){
+        System.out.println("##노티노티");
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT);
