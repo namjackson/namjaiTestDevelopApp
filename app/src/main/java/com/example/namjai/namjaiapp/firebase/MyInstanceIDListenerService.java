@@ -26,6 +26,5 @@ public class MyInstanceIDListenerService extends FirebaseInstanceIdService {
         System.out.println("##server go token : "+token);
 
 
-
     }
 }

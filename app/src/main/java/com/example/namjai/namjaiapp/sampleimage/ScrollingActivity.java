@@ -1,4 +1,4 @@
-package com.example.namjai.namjaiapp.permission;
+package com.example.namjai.namjaiapp.sampleimage;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -9,12 +9,12 @@ import android.view.View;
 
 import com.example.namjai.namjaiapp.R;
 
-public class PermissionActivity extends AppCompatActivity {
+public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_permission);
+        setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -27,5 +27,4 @@ public class PermissionActivity extends AppCompatActivity {
             }
         });
     }
-
 }

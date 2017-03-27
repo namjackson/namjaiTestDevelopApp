@@ -6,16 +6,21 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <uses-feature android:name="android.hardware.camera" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <!--알리미
+    <!--
+    알리미
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <uses-permission android:name="android.permission.WAKE_LOCK"/>
     -->
-
-
-
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -27,12 +32,12 @@
         <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-
-        <!-- Start fcm_receiver-->
+        <!-- Start fcm_receiver -->
         <service android:name=".firebase.MyFcmListenerService">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -44,12 +49,13 @@
             </intent-filter>
         </service>
 
+        <!-- end fcm_receiver -->
 
-        <!-- end fcm_receiver-->
 
-        <!---->
+        <!--  -->
 
-        <!---->
+
+        <!--  -->
         <service
             android:name=".ServiceTest.MyService"
             android:enabled="true"
@@ -63,7 +69,31 @@
             android:theme="@style/AppTheme" />
         <activity android:name=".GraphTest.GraphActivity" />
         <activity android:name=".TimeSettingTest.TimeSettingCheckActivity" />
-        <activity android:name=".ServiceTest.ServiceTestActivity"></activity>
+        <activity android:name=".ServiceTest.ServiceTestActivity" />
+        <activity
+            android:name=".sampleimage.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".sampleimage.ItemListActivity"
+            android:label="@string/title_item_list"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".sampleimage.ItemDetailActivity"
+            android:label="@string/title_item_detail"
+            android:parentActivityName=".sampleimage.ItemListActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.namjai.namjaiapp.sampleimage.ItemListActivity" />
+        </activity>
+        <activity android:name=".location.LocationActivity"></activity>
     </application>
 
 </manifest>

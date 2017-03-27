@@ -10,11 +10,17 @@ import android.widget.Toast;
 
 import com.example.namjai.namjaiapp.FlashTest.FlashActivity;
 
-import com.example.namjai.namjaiapp.permission.PermissionActivity;
+import com.example.namjai.namjaiapp.firebase.NewMessageNotificationPic;
+import com.example.namjai.namjaiapp.firebase.NewMessageNotification_More;
+//import com.example.namjai.namjaiapp.permission.PermissionActivity;
 import com.example.namjai.namjaiapp.GraphTest.GraphActivity;
 import com.example.namjai.namjaiapp.ServiceTest.ServiceTestActivity;
 import com.example.namjai.namjaiapp.TimeSettingTest.TimeSettingCheckActivity;
 
+import com.example.namjai.namjaiapp.location.LocationActivity;
+import com.example.namjai.namjaiapp.sampleimage.ItemListActivity;
+import com.example.namjai.namjaiapp.firebase.NewMessageNotification;
+import com.example.namjai.namjaiapp.sampleimage.ScrollingActivity;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
@@ -27,9 +33,18 @@ public class MainActivity extends AppCompatActivity {
     Button btn_service; // 그래프
     Button btn_timesetting; // 그래프
 
+    Button btn_location;  // 버튼
+
     Button button_dialog;
 
     Button btn_etc;
+
+    Button btn_1;
+    Button btn_2;
+    Button btn_3;
+    Button btn_4;
+    Button btn_5;
+
 
 
 
@@ -58,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
         btn_etc = (Button) findViewById(R.id.btn_etc);
         btn_etc.setOnClickListener(subsribeClickLister);
 
+        btn_location = (Button)findViewById(R.id.btn_location);
+        btn_location.setOnClickListener(locationClickLister);
+
         System.out.println("token!! ##token :dasdasd");
         String token = FirebaseInstanceId.getInstance().getToken();
         // 이 token을 서버에 전달 한다.
@@ -65,6 +83,30 @@ public class MainActivity extends AppCompatActivity {
 
         //알람
         FirebaseMessaging.getInstance().subscribeToTopic("notice");
+        FirebaseMessaging.getInstance().subscribeToTopic("dd");
+        //  FirebaseMessaging.getInstance().send();
+        //FirebaseMessaging.getInstance().unsubscribeFromTopic("");
+
+
+
+
+        btn_1 = (Button) findViewById(R.id.btn_1);
+        btn_1.setOnClickListener(btn_1ClickLister);
+
+        btn_2 = (Button) findViewById(R.id.btn_2);
+        btn_2.setOnClickListener(btn_2ClickLister);
+
+        btn_3 = (Button) findViewById(R.id.btn_3);
+        btn_3.setOnClickListener(btn_3ClickLister);
+
+        btn_4 = (Button) findViewById(R.id.btn_4);
+        btn_4.setOnClickListener(btn_4ClickLister);
+
+        btn_5 = (Button) findViewById(R.id.btn_5);
+        btn_5.setOnClickListener(btn_5ClickLister);
+
+
+
 
 
 
@@ -90,8 +132,8 @@ public class MainActivity extends AppCompatActivity {
     Button.OnClickListener permisionClickLister = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(MainActivity.this, PermissionActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(MainActivity.this, PermissionActivity.class);
+//            startActivity(intent);
         }
     };
     Button.OnClickListener graphClickLister = new View.OnClickListener() {
@@ -128,6 +170,61 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
         }
     };
+
+    Button.OnClickListener locationClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, LocationActivity.class);
+            startActivity(intent);
+        }
+    };
+
+
+
+
+    Button.OnClickListener btn_1ClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ScrollingActivity.class);
+            startActivity(intent);
+        }
+    };
+    Button.OnClickListener btn_2ClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(MainActivity.this, ItemListActivity.class);
+            startActivity(intent);
+        }
+    };
+    Button.OnClickListener btn_3ClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ///Intent intent = new Intent(MainActivity.this, ItemDetailActivity.class);
+            //startActivity(intent);
+            NewMessageNotification.notify(MainActivity.this,"알람발생",999);
+        }
+    };
+    Button.OnClickListener btn_4ClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //Intent intent = new Intent(MainActivity.this, FlashActivity.class);
+            //startActivity(intent);
+            NewMessageNotification_More.notify(MainActivity.this,"알람발생",999);
+        }
+    };
+    Button.OnClickListener btn_5ClickLister = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //Intent intent = new Intent(MainActivity.this, FlashActivity.class);
+            //startActivity(intent);
+           //
+            NewMessageNotificationPic.notify(MainActivity.this,"알람발생",999);
+        }
+    };
+
+
+
+
 
 
 

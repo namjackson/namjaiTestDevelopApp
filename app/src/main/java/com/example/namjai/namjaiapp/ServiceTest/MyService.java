@@ -9,6 +9,7 @@ public class MyService extends Service {
     private static final String TAG= "MyService";
     boolean isRunning;
     int mCount;
+    int mcount2;
 
     @Override
     public void onCreate() {
@@ -16,6 +17,7 @@ public class MyService extends Service {
         super.onCreate();
         isRunning = true;
         mCount = 0;
+
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -23,7 +25,7 @@ public class MyService extends Service {
                     Log.i(TAG,"###Service1 : "+ mCount);
                     mCount++;
                     try{
-                        Thread.sleep(1000);
+                        Thread.sleep(10000);
                     }catch (InterruptedException e){
                         e.printStackTrace();
                     }

@@ -50,16 +50,6 @@
         android:id="@+id/btn_service" />
 
     <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_timesetting"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="21dp"
-        android:id="@+id/btn_etc" />
-
-    <Button
         android:text="timeSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,5 +57,71 @@
         android:layout_below="@+id/btn_service"
         android:layout_alignRight="@+id/btn_permissions"
         android:layout_alignEnd="@+id/btn_permissions" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/btn_etc"
+        android:layout_below="@+id/btn_timesetting"
+        android:layout_alignLeft="@+id/btn_timesetting"
+        android:layout_alignStart="@+id/btn_timesetting" />
+
+    <Button
+        android:text="btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="btn_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_2"
+        android:layout_below="@+id/btn_1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="btn_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_3"
+        android:layout_below="@+id/btn_2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="btn_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_4"
+        android:layout_below="@+id/btn_3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="btn_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_5"
+        android:layout_below="@+id/btn_4"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="13dp" />
+
+    <Button
+        android:text="btn_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_etc"
+        android:layout_alignLeft="@+id/btn_etc"
+        android:layout_alignStart="@+id/btn_etc"
+        android:layout_marginTop="25dp"
+        android:id="@+id/btn_location" />
 
 </RelativeLayout>
